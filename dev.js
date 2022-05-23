@@ -24,6 +24,9 @@ const compiler = webpack([
 
 let node;
 
+/**
+ * compiler는 파일 시스템을 모니터링하고 파일이 변경될 때 다시 컴파일하는 감시 지원
+ */
 compiler.hooks.watchRun.tap("Dev", (compiler) => {
   console.log(`Compiling ${compiler.name} ...`);
   if (compiler.name === "server" && node) {
